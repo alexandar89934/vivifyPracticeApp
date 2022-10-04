@@ -16,3 +16,22 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/get', function () {
+    return "hello, this is get route";
+})->name('get');
+
+Route::post('/post', [App\Http\Controllers\RequestController::class, 'postRequest'])->name('post');
+
+Route::put('/put',  function () {
+    return "hello, this is put route";
+})->name('put');
+
+Route::patch('/patch',  function () {
+    return "hello, this is patch route";
+})->name('patch');
+
+Route::delete('/delete',  function () {
+    return "hello, this is delete route";
+})->name('delete');
