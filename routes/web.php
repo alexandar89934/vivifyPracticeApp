@@ -22,6 +22,8 @@ Route::get('/get', function () {
     return "hello, this is get route";
 })->name('get');
 
+Route::get('/getname/{first_name}', [App\Http\Controllers\RequestController::class, 'getName'])->name('firstName');
+
 Route::post('/post', [App\Http\Controllers\RequestController::class, 'postRequest'])->name('post');
 
 Route::put('/put',  function () {
