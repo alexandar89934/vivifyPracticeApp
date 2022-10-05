@@ -155,7 +155,10 @@ return [
     */
 
     'providers' => [
-
+        
+        
+        'Webpatser\Countries\CountriesServiceProvider',
+     
         /*
          * Laravel Framework Service Providers...
          */
@@ -181,7 +184,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-
+        
         /*
          * Package Service Providers...
          */
@@ -196,6 +199,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
     ],
+   
 
     /*
     |--------------------------------------------------------------------------
@@ -207,9 +211,13 @@ return [
     | the aliases are "lazy" loaded so they don't hinder performance.
     |
     */
+    'aliases' => [
+        'Countries' => 'Webpatser\Countries\CountriesFacade',
+    ],
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
+      
     ])->toArray(),
 
 ];

@@ -25,7 +25,12 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UsersTableSeeder::class,
             PostSeeder::class,
+            CountriesSeeder::class
           
         ]);
+
+        //Seed the countries
+        // $this->call('CountriesSeeder');
+        // $this->command->info('Seeded the countries!'); 
     }
 }
