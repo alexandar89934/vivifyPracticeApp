@@ -21,6 +21,8 @@ Route::get('/', function () {
 
 Route::resource('home', \App\Http\Controllers\HomeController::class);
 
+Route::resource('post', \App\Http\Controllers\PostController::class);
+
 Route::get('/get', function () {
     return "hello, this is get route";
 })->name('get');
