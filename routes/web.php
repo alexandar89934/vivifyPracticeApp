@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::resource('home', \App\Http\Controllers\HomeController::class);
 
 Route::get('/get', function () {
     return "hello, this is get route";
@@ -42,3 +45,4 @@ Route::delete('/delete',  function () {
 Route::get('/check', ['as' => 'middle', 'middleware' => 'adult', function () {
     return view('age_approved');
 }]);
+
