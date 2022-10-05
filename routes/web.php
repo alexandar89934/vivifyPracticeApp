@@ -37,3 +37,8 @@ Route::patch('/patch',  function () {
 Route::delete('/delete',  function () {
     return "hello, this is delete route";
 })->name('delete');
+
+
+Route::get('/check', ['as' => 'middle', 'middleware' => 'adult', function () {
+    return view('age_approved');
+}]);
