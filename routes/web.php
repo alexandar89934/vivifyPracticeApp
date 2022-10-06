@@ -21,7 +21,7 @@ Route::get('/', function () {
 
 Route::resource('home', \App\Http\Controllers\HomeController::class);
 
-Route::resource('post', \App\Http\Controllers\PostController::class);
+Route::resource('post', \App\Http\Controllers\PostController::class)->middleware('can:create,App\Post');
 
 Route::get('/get', function () {
     return "hello, this is get route";

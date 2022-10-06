@@ -8,6 +8,16 @@ use App\Http\Requests\UpdatePostRequest;
 
 class PostController extends Controller
 {
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function __construct()
+    {
+        $this->authorizeResource(Post::class, 'post');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -25,7 +35,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        $this->authorize('create', Post::class);
     }
 
     /**
@@ -70,7 +80,7 @@ class PostController extends Controller
      */
     public function update(UpdatePostRequest $request, Post $post)
     {
-        //
+        $this->authorize('update', $post);
     }
 
     /**
