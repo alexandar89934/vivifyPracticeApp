@@ -1,5 +1,8 @@
 <?php
 
+use App\Exceptions\CostumExceptionClass;
+use App\Exceptions\CustomExceptionClass;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Route;
 
 
@@ -24,6 +27,7 @@ Route::resource('home', \App\Http\Controllers\HomeController::class);
 Route::resource('post', \App\Http\Controllers\PostController::class)->middleware('can:create,App\Post');
 
 Route::get('/get', function () {
+    throw new CustomExceptionClass();
     return "hello, this is get route";
 })->name('get');
 
